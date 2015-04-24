@@ -132,6 +132,10 @@ class SchemaDumpController extends Controller
             ' . ""' => '',
             '" . "' => '',
         ]));
+        return strtr($stdout, [
+            ' . ""' => '',
+            '" . "' => '',
+        ]);
     }
 
     /**
@@ -169,7 +173,8 @@ class SchemaDumpController extends Controller
             $stdout .= "\n";
         }
 
-        $this->stdout($stdout);
+        print $stdout;
+        return $stdout;
     }
 
     /**
