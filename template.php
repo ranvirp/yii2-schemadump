@@ -9,14 +9,25 @@ echo "<?php\n";
 
 use yii\db\Schema;
 use jamband\schemadump\Migration;
+use jamband\schemadump\SchemadumpController;
 
 class <?= $className ?> extends Migration
 {
     public function safeUp()
     {
+      <?php 
+       $sd = new \jamband\schemadump\SchemadumpController;
+       echo $sd->actionCreate();
+      
+      ?>
     }
 
     public function safeDown()
     {
+    <?php 
+       $sd = new \jamband\schemadump\SchemadumpController;
+       echo $sd->actionDrop();
+      
+      ?>
     }
 }
