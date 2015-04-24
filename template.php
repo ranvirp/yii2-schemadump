@@ -16,7 +16,7 @@ class <?= $className ?> extends Migration
     public function safeUp()
     {
       <?php 
-       $sd = new \jamband\schemadump\SchemadumpController;
+       $sd = new \jamband\schemadump\SchemadumpController('a','b');
        echo $sd->actionCreate();
       
       ?>
@@ -25,7 +25,7 @@ class <?= $className ?> extends Migration
     public function safeDown()
     {
     <?php 
-       $sd = new \jamband\schemadump\SchemadumpController;
+       $sd = new \jamband\schemadump\SchemadumpController('a','b');
        echo $sd->actionDrop();
       
       ?>
